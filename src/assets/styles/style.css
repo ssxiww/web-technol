@@ -2,10 +2,70 @@
 @import "./fonts.css";
 @import "./utils.css";
 
-.test {
-    color: yellow !important;
+/* Общие стили для параграфов */
+.paragraph {
+    font-size: 16px;
+    line-height: 26px;
+    color: #1F3F68;
 }
 
-.test {
-    color: red !important;
+/* Стили для заголовка h1 */
+.main-title {
+    font-size: 64px;
+    color: #1F3F68;
+}
+
+/* Стили для заголовка h2 на странице контактов */
+.contact-title {
+    font-weight: 500;
+    font-size: 44px;
+    text-align: center;
+
+}
+
+/* Стили для заголовка h3 */
+.section-title {
+    font-size: 36px;
+    text-align: center;
+}
+
+/* Стили для заголовка h4 */
+.sub-title {
+    font-size: 20px;
+    line-height: 30px;
+    color: #1F3F68;
+}
+
+/* Стили для полей ввода (input, textarea) */
+.input-field {
+    border: 1px solid #356EAD;
+    box-sizing: border-box;
+    border-radius: 10px;
+    opacity: 0.4;
+}
+
+/* Стили для кнопки отправки формы */
+.submit-button {
+    background: linear-gradient(270deg, #007BFF, #8A2BE2); 
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 10px; 
+    font-weight: 500; 
+    font-size: 16px; 
+    line-height: 26px; 
+    text-align: center; 
+    color: #FFFFFF; 
+    text-transform: uppercase;
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer;
+}
+
+/* Стили для формы на странице контактов */
+
+.contact-form {
+    background-image: url('fon2.jpeg');
+    background-size: cover; 
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
 }
