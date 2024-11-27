@@ -63,7 +63,7 @@
 /* Стили для формы на странице контактов */
 
 .contact-form {
-    background-image: url('fon2.jpeg');
+    background-image: url("/src/assets/img/1064576.png");
     background-size: cover; 
     background-position: center;
     padding: 20px;
