@@ -69,3 +69,16 @@
     padding: 20px;
     border-radius: 10px;
 }
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1F3F68;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+    padding: 5px 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
