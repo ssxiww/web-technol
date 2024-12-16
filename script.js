@@ -85,7 +85,6 @@ function init() {
             this.el.innerHTML = this.renderParent(this.data);
         };
 
-        // Рендеринг узлов
         this.renderParent = function (data) {
             let html = `
                 <div class="list-item" data-parent>
@@ -100,7 +99,7 @@ function init() {
             if (data.hasChildren) {
                 html += '<div class="list-item__items">';
                 data.items.forEach(item => {
-                    html += this.renderParent(item); // Рекурсия
+                    html += this.renderParent(item);
                 });
                 html += '</div>';
             }
