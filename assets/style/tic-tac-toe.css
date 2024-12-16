@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: lightgray;
+    background: rgb(220, 210, 210);
     cursor: pointer;
     font-size: 4em;
 }
