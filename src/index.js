@@ -11,7 +11,7 @@ const settings = {
   rowsCount: 21,
   colsCount: 21,
   speed: 4,
-  winFoodCount: 5,
+  winFoodCount: 50,
 };
 
 /**
