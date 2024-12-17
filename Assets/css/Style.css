@@ -1,0 +1,1251 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #F2F4F7;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("../fonts/SFPro_Font_License/SFProText-Medium.ttf");
+
+
+    font-family: "Inter";
+    src: url("../fonts/Inter/Inter-VariableFont_slnt,wght.ttf   ");
+
+}
+
+/* header */
+
+#burgerMenu {
+    display: none;
+}
+
+.header_container{
+    width: 1150px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px 20px 10px 20px;
+    gap: 80px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);    
+    display: flex;
+}
+
+.header_nav {
+    width: max-content;
+    display: flex;
+    gap: 12px;
+    margin: auto 0 auto auto;
+}
+
+a {
+    text-decoration: none; 
+
+}
+
+.logo {
+    width: max-content;
+    margin-bottom: 10px;
+}
+
+.logo a {
+    text-transform: uppercase;
+    color: rgba(45, 102, 238, 1);
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    text-align: center;
+}
+
+.main_menu {
+    display: flex;
+}
+
+.phone {
+    display: none;
+}
+
+.nav_main_menu {
+    width: 324px;
+    height: 18px;
+    gap: 24px;
+    margin: auto;
+}
+
+.nav_main_menu ul {
+    display: flex;
+    gap: 18px;
+}
+
+.nav_main_menu li {
+    
+    list-style-type: none;
+}
+
+.nav_main_menu a {
+    color: rgba(16, 24, 40, 1);
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.nav_main_menu a:hover {
+    color: rgba(45, 102, 238, 1);
+}
+
+.nav_contact_info_phone, .nav_contact_info_email {
+    gap: 32px;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav_contact_info_phone ul, .nav_contact_info_email ul {
+    display: flex;
+    gap: 12px;
+
+}
+
+.nav_contact_info_phone li, .nav_contact_info_email li {
+    margin: auto;
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(45, 102, 238, 1);
+    list-style-type: none;
+}
+
+#burgerMenu, #closeMenu {
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.head-model {
+    width: 100%;
+    display: flex;
+}
+
+.header_container.show {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* main */
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* main-block */
+
+
+
+.main-block__info {
+    width: 600px;
+}
+
+.main-block__info h2 {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.main-block__info p {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.23px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+
+
+.main-block__info span {
+    color: rgba(45, 102, 238, 1);
+}
+
+.form-feedback {
+    width: max-content;
+    background-color: #fff;
+    padding: 24px;
+    gap: 32px;
+    border-radius: 12px;
+    opacity: 0px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.16);
+    
+}
+
+.form-feedback h3 {
+    width: 500px;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.37px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(16, 24, 40, 1);
+}
+
+.contact-info {
+    display: flex;
+    margin-top: 30px;
+}
+
+.form_contact_input {
+    width: 242px;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    gap: 8px;
+    display: flex;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(208, 213, 221, 1);
+}
+
+.form_contact_input input {
+    border: none;
+}
+
+.form_contact_input p {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.40799999237060547px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.form_contact {
+    width: max-content;
+}
+
+.form_contact input {
+    width: 120px;
+    border: none;
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.40799999237060547px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.name_input {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: -0.07800000160932541px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(102, 112, 133, 1);
+}
+
+.no-color {
+    color: #fff;
+}
+
+.form_button button {
+    width: 118px;
+    background-color: rgba(45, 102, 238, 1);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 8px;
+    padding: 11px 24px 11px 24px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* services */
+
+.services {
+    width: 100%;
+    background-color: #fff;
+}
+
+
+.title {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.description {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-top: 20px;
+}
+
+.web-title, .mobile-title {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.3799999952316284px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 25px;    
+}
+
+.web, .mobile-list {
+    color: rgba(52, 64, 84, 1);
+    width: 496px;
+    margin-top: 34px;
+}
+
+.web-list, .mobile-list {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.40799999237060547px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap; 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.web-list, .mobile-list li {
+    margin-right: 5px;
+}
+
+.web-list li + li:before, .mobile-list li + li:before{
+    content: " / ";
+    margin-left: 5px;
+    color: rgba(45, 102, 238, 1);
+}
+
+
+.mobile {
+    margin-top: 32px;
+}
+
+.services_content {
+    display: flex;
+}
+
+.services_fight_content {
+    margin-left: auto;
+    margin-right: 200px;
+}
+
+.select_development-list li {
+    width: 220px;
+    height: 22px;
+    padding: 12px 12px;
+    gap: 12px;
+    list-style-type: none; 
+}
+
+.select_development-list  li:after {
+    content: url("../img/icon-right-arrow.png");
+    width: 10px;
+    height: 10px;
+    margin-left: 16px;
+    position: relative;
+    top: 5px;
+}
+
+.select_development-list a {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.3799999952316284px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(29, 41, 57, 1);
+    display: inline-block;
+}
+
+.select_development-list a:hover {
+    font-weight: 600;
+    border-bottom: 1px solid rgba(45, 102, 238, 1);
+}
+
+
+
+
+
+
+
+
+/* industries */
+
+.industries h2 {
+    margin-bottom: 30px;
+    font-family: "Inter";
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32645100355148315px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(16, 24, 40, 1);
+
+}
+
+.industries .highlight {
+  color: #0066ff;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  justify-items: left;
+  margin-right: auto;    
+}
+
+.industry-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.industry-item svg {
+    width: 34px;
+    height: 34px;
+    background-color: #fff;
+    border-radius: 100px;
+    padding: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+}
+
+.industry-item p {
+  font-family: "SF Pro Text", sans-serif;
+  font-size: 16px;
+  margin: auto;
+  color: #4b4b4d;
+}
+  
+
+
+
+/* our-projects */
+
+
+.our-projects_container {
+    width: 1150px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.our-projects h1 {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+.subtitle {
+    width: 550px;
+    margin-top: 24px;
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.23px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+.tabs {
+    margin: 50px 0;
+    display: flex;
+    gap: 20px;
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.40px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.tabs_container ul {
+    display: flex;
+}
+
+.tabs_container li {
+    padding: 16px;
+    list-style-type: none;
+}
+
+.tabs a:hover {
+    font-weight: bold;
+    border-bottom: 2px solid rgba(45, 102, 238, 1);
+}
+.tab {
+  color: rgba(29, 41, 57, 1);
+  margin: auto 0;
+
+}
+.tab.active {
+  font-weight: bold;
+  border-bottom: 2px solid rgba(45, 102, 238, 1);
+}
+
+.btn {
+    padding: 11px 24px;
+    background-color: rgba(45, 102, 238, 1);
+    color: rgba(255, 255, 255, 1);
+    gap: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+.btn:hover {
+    box-shadow: 0px 12px 18px 0px rgba(0, 0, 0, 0.04);
+}
+
+.our-projects_img-phone {
+    position: absolute;
+    right: 135px;
+    top: 279px;
+}
+
+.our-projects_img-phone svg {
+    width: 504px;
+    height: 307px;
+}
+
+
+.project-title {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32645100355148315px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    
+}
+.project-description {
+    width: 550px;
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    
+}
+
+
+
+.tags_country, .tags_medicine {
+    display: flex;
+    margin: auto 0;
+    gap: 8px;
+    color: rgba(16, 24, 40, 1);
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.tags {
+  display: flex;
+  margin: auto;
+  gap: 32px;    
+}
+
+.stats {
+  width: 252px;
+  display: flex;
+  gap: 30px;
+  margin: 30px 0;
+}
+.stat {
+  font-size: 18px;
+  font-weight: bold;
+}
+.download-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.download-buttons img {
+  width: 140px;
+}
+
+.project-list {
+    display: flex;
+    list-style-type: none; 
+    margin: 20px 0;
+    color: rgba(71, 84, 103, 1);
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 14px
+}
+
+.project-list li + li:before {
+    content: " / ";
+    margin-left: 5px;
+    font-weight: bold;
+    color: rgba(45, 102, 238, 1);
+}
+
+.stats h3 {
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34.56px;
+    letter-spacing: 0.32645100355148315px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.stats p {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.07800000160932541px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(102, 112, 133, 1);  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* discuss-project */
+
+.discuss-info h3 {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32645100355148315px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.discuss-info p {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.discuss-project {
+    background-color:rgba(45, 102, 238, 1);
+    width: 100%;
+    height: 350px;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.08);
+
+}
+
+.discuss-form {
+    width: 500px;
+    height: 150px;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.discuss-info {
+    width: 370px;
+}
+
+.discuss-info br {
+    display: none;
+}
+
+.container_input {
+    display: flex;
+    margin: auto;
+}
+
+.form_btn button {
+    width: max-content;
+    background-color: rgba(45, 102, 238, 1);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 8px;
+    padding: 11px 44px 11px 44px;
+    text-align: left;
+}
+
+.form_btn {
+    width: 165px;
+    margin-left: auto;
+    margin-right: 40px;
+
+}
+
+
+
+
+
+
+
+.aplicacion-stages {
+    width: 100%;
+    background-color: #fff;
+}
+
+.development_stage {
+    width: 392px;
+    height: 123px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    gap: 16px;
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.30); 
+}
+
+.aplicacion-title {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.development_stage {
+    position: relative;
+    margin-top: 24px;
+}
+
+.development_stage_title {
+    width: max-content;
+    display: flex;
+    gap: 24px;
+}
+
+.development_stage_title h3 {
+    font-family: "SF Pro Text", sans-serif;
+    margin: auto;
+}
+
+.aplication-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+}
+
+.analysis, .design, .development {
+    justify-self: start;
+
+}
+.aplication-description {
+    width: 320px;
+    margin-top: 16px;
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.23px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.background-svg {
+    top: 0;
+    right: 0;
+    position: absolute;
+    
+}
+
+
+
+
+
+
+
+
+/* our-team */
+
+.our-team-grid {
+    display: grid;
+
+}
+
+
+
+.our-team-video {
+    position: relative;
+    width: 520px;
+    height: 350px;
+    overflow: hidden;
+    margin: auto;
+    box-shadow: 0px 39px 34px 0px rgba(0, 0, 0, 0.48);
+
+}
+
+.our-team-video img {
+    width: 800px;
+    margin-left: -110px; 
+    z-index: -1;
+    filter: blur(0.5px);
+}
+
+.our-team-video::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 102, 238, 0.15); 
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.button_play {
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+    background-color: rgba(45, 102, 238, 1);
+    position: absolute;
+    border-radius: 25px;
+    top: 148px;
+    left: 255px;
+    
+}
+
+.button_play_svg {
+    width: max-content;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+.button_play svg {
+    width: max-content;
+    margin: 0 auto;
+}    
+
+.our-team-info {
+    width: 600px;
+}
+
+.our-team_title h3 {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.our-team_discription p, .conclusion p {
+    width: 550px;
+    margin-top: 24px;
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.23px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.team-statistics {
+    display: flex;
+    gap: 16px;
+}
+
+.team-members, .projects, .in-it-sphere {
+    margin-top: 24px;
+    width: max-content;
+    margin-right: auto;
+    float: left;
+}
+
+.team-members h3, .projects h3, .in-it-sphere h3 {
+    font-family: "Inter";
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 69.12px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.team-members p, .projects p, .in-it-sphere p {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.23px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(102, 112, 133, 1);
+}
+
+
+
+
+
+
+
+
+
+
+/* free-book */
+
+
+.free-book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.free-book_img {
+    position: relative;
+    margin: -50px;
+}
+
+.free-book_img img {
+    width: 750px;
+}
+
+.free-book {
+    background-color:rgba(45, 102, 238, 1);
+    width: 100%;
+}
+
+.free-book_form {
+    width: 500px;
+    background-color: #fff;
+    padding: 24px;
+    gap: 32px;
+    border-radius: 12px;
+    opacity: 0px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.16);
+}
+.free-book_title h3 {
+    width: 600px;
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(252, 252, 253, 1);
+}
+
+.email_input {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/* frequently-asked-questions */
+
+.fdq_body {
+    display: flex;
+    gap: 20px;
+}
+
+.frequently-asked-questions {
+    background-color: #fff;
+
+}
+
+.question {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    border-top: 1px solid rgba(208, 213, 221, 1);
+    border-bottom: 1px solid rgba(208, 213, 221, 1);
+}
+
+.question_active {
+    width: 100%;
+    height: 310px;
+    border-top: 1px solid rgba(208, 213, 221, 1);
+    border-bottom: 1px solid rgba(208, 213, 221, 1);
+}
+
+.question_description {
+    width: 480px;
+}
+
+.question_description span {
+    font-weight: 700;
+}
+
+.frequently-asked-questions_title h3 {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 51.84px;
+    letter-spacing: 0.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.question_description p {
+    font-family: "SF Pro Text", sans-serif; 
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.23px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.question p, .question_active_title {
+    margin: auto 0;
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.37px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(16, 24, 40, 1);
+}
+
+.question_active_title {
+    margin-top: 30px;
+}
+
+.question_active_close {
+    width: max-content;
+    margin: auto 20px auto auto;
+    padding: 7px;
+}
+
+.question_active_close svg {
+    cursor: pointer;
+}
+
+.question svg {
+    width: 24px;
+    height: 24px;
+    padding: 7px;
+    border-radius: 20px;
+    margin: auto 20px auto auto;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* footer */
+
+.footer_container {
+    height: max-content;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: rgba(16, 24, 40, 1);
+}
+
+footer {
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 0;
+    
+}
+
+footer p {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.40px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.footer_title {
+    width: max-content;
+    margin: 0 auto 40px auto;
+}
+
+.footer_title h1 {
+    font-family: "Inter";
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.15px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.footer_contact-title {
+    display: flex;
+    width: max-content;
+    gap: 8px;
+    margin-bottom: 11px;
+}
+
+
+.footer_contact-title p {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.15399999916553497px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(152, 162, 179, 1);
+}
+
+.footer_contacr_info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto 40px auto;
+}
+
+
+.footer_lower {
+    display: flex;
+    width: max-content;
+    gap: 12px;
+    margin: 0 auto;
+}
+
+.footer_lower p {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.07px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: rgba(255, 255, 255, 1);
+}
