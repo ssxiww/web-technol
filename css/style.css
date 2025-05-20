@@ -1,0 +1,12 @@
+div {
+    background-color: rgb(222 222 222);
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    margin: 10px;
+}
+
+.main {
+    width: 1300px;
+    display: flex;
+}
