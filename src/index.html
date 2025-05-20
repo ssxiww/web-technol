@@ -1,14 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pizza</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaTime - Заказ пиццы</title>
+    <link rel="stylesheet" href="assets/styles/Style.css">
 </head>
 <body>
+    <header class="app-header">
+        <h1>🍕 PizzaTime</h1>
+        <div class="cart-indicator">Корзина (0)</div>
+    </header>
+
+    <main class="app-container">
+        <section class="menu-section">
+            <h2>Выберите пиццу</h2>
+            <div class="pizza-grid">
+                <div class="pizza-card" data-type="Пепперони">
+                    <div class="pizza-image" style="background-image: url('assets/img/Пипирони.jpg')"></div>
+                    <h3>Пепперони</h3>
+                    <div class="price">от 399₽</div>
+                </div>
+                <div class="pizza-card" data-type="Маргарита">
+                    <div class="pizza-image" style="background-image: url('assets/img/Маргарита.jpg')"></div>
+                    <h3>Маргарита</h3>
+                    <div class="price">от 349₽</div>
+                </div>
+                <div class="pizza-card" data-type="Баварская">
+                    <div class="pizza-image" style="background-image: url('assets/img/Баварская.jpg')"></div>
+                    <h3>Баварская</h3>
+                    <div class="price">от 449₽</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="customize-section">
+            <div class="size-selector">
+                <h3>Размер</h3>
+                <div class="size-options">
+                    <button class="size-option active" data-size="small">Маленькая (25см)</button>
+                    <button class="size-option" data-size="large">Большая (35см)</button>
+                </div>
+            </div>
+
+            <div class="addons-grid">
+                <div class="addon-card" data-addon="сырный борт">
+                    <img src="assets/img/бортик.png" alt="Сырный борт">
+                    <span>Сырный борт +189₽</span>
+                </div>
+                <div class="addon-card" data-addon="сливочная моцарелла">
+                    <img src="assets/img/моцорелла.png" alt="Моцарелла">
+                    <span>Сливочная моцарелла +99₽</span>
+                </div>
+                <div class="addon-card" data-addon="чедер и пармезан">
+                    <img src="assets/img/чедр.png" alt="Пармезан">
+                    <span>Чедер и пармезан +99₽</span>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <div class="total-price">Итого: 399₽</div>
+                <div class="calories">~850 Ккал</div>
+                <button class="add-to-cart">Добавить в корзину</button>
+            </div>
+        </section>
+    </main>
+
     <script src="index.js"></script>
 </body>
 </html>

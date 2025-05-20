@@ -1,96 +1,171 @@
-class Pizza {
-    static TYPES = {
-    'Маргарита': { price: 500, calories: 300 },
-    'Пиперине': { price: 800, calories: 400 },
-    'Баварская': { price: 700, calories: 450 }
-    };
+// Данные о пиццах и размерах
+const pizzaData = {
+  'Пепперони': { basePrice: 399, baseCal: 600 },
+  'Маргарита': { basePrice: 349, baseCal: 500 },
+  'Баварская': { basePrice: 449, baseCal: 700 }
+};
 
-    static SIZES = {
-    'маленькая': { price: 100, calories: 100 },
-    'большая': { price: 200, calories: 200 }
-    };
+const sizeData = {
+  'small': { priceModifier: 0, calModifier: 0, name: 'Маленькая (25см)' },
+  'large': { priceModifier: 200, calModifier: 150, name: 'Большая (35см)' }
+};
 
-    static TOPPINGS = {
-    'сливочная моцарелла': { price: 50, calories: 20 },
-    'сырный борт': {
-        маленькая: { price: 150, calories: 50 },
-        большая: { price: 300, calories: 50 }
-    },
-    'чедер и пармезан': {
-        маленькая: { price: 150, calories: 50 },
-        большая: { price: 300, calories: 50 }
+const addonsData = {
+  'сырный борт': { price: 189, cal: 50 },
+  'сливочная моцарелла': { price: 99, cal: 20 },
+  'чедер и пармезан': { price: 99, cal: 20 }
+};
+
+// Состояние приложения
+let state = {
+  selectedPizza: null,
+  selectedSize: 'small',
+  selectedAddons: [],
+  cartItems: []
+};
+
+// Элементы DOM
+const DOM = {
+  pizzaCards: document.querySelectorAll('.pizza-card'),
+  sizeOptions: document.querySelectorAll('.size-option'),
+  addonCards: document.querySelectorAll('.addon-card'),
+  totalPrice: document.querySelector('.total-price'),
+  calories: document.querySelector('.calories'),
+  addToCartBtn: document.querySelector('.add-to-cart'),
+  cartIndicator: document.querySelector('.cart-indicator')
+};
+
+// Обновление интерфейса
+const updateUI = () => {
+  if (!state.selectedPizza) {
+    DOM.totalPrice.textContent = 'Выберите пиццу';
+    DOM.calories.textContent = '';
+    DOM.addToCartBtn.disabled = true;
+    return;
+  }
+
+  const pizza = pizzaData[state.selectedPizza];
+  const size = sizeData[state.selectedSize];
+  
+  let totalPrice = pizza.basePrice + size.priceModifier;
+  let totalCal = pizza.baseCal + size.calModifier;
+
+  // Добавляем допы (теперь с проверкой)
+  state.selectedAddons.forEach(addonName => {
+    if (addonsData[addonName]) {
+      totalPrice += addonsData[addonName].price;
+      totalCal += addonsData[addonName].cal;
     }
-    };
+  });
 
-    constructor(type, size) {
-    if (!Pizza.TYPES[type]) throw new Error('Неверный тип пиццы');
-    if (!Pizza.SIZES[size]) throw new Error('Неверный размер пиццы');
+  DOM.totalPrice.textContent = `Итого: ${totalPrice}₽`;
+  DOM.calories.textContent = `~${totalCal} Ккал`;
+  DOM.addToCartBtn.disabled = false;
+  DOM.cartIndicator.textContent = `Корзина (${state.cartItems.length})`;
+};
 
-    this.type = type;
-    this.size = size;
-    this.toppings = [];
-    }
+// Обработчики событий
+const setupEventListeners = () => {
+  // Выбор пиццы
+  DOM.pizzaCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Удаляем выделение у всех пицц
+      DOM.pizzaCards.forEach(c => c.classList.remove('selected'));
+      
+      // Добавляем выделение текущей
+      card.classList.add('selected');
+      
+      // Обновляем состояние
+      state.selectedPizza = card.dataset.type;
+      
+      // Обновляем UI
+      updateUI();
+    });
+  });
 
-    addTopping(topping) {
-    if (!Pizza.TOPPINGS[topping]) throw new Error('Неверная добавка');
-    if (!this.toppings.includes(topping)) {
-        this.toppings.push(topping);
-    }
-    }
+  // Выбор размера
+  DOM.sizeOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      // Удаляем активный класс у всех вариантов
+      DOM.sizeOptions.forEach(opt => opt.classList.remove('active'));
+      
+      // Добавляем активный класс текущему
+      option.classList.add('active');
+      
+      // Обновляем состояние
+      state.selectedSize = option.dataset.size;
+      
+      // Обновляем UI
+      updateUI();
+    });
+  });
 
-    removeTopping(topping) {
-    this.toppings = this.toppings.filter(t => t !== topping);
-    }
-
-    getToppings() {
-    return this.toppings;
-    }
-
-    getSize() {
-    return this.type;
-    }
-
-    getStuffing() {
-    return this.size;
-    }
-
-    calculatePrice() {
-    let price = Pizza.TYPES[this.type].price + Pizza.SIZES[this.size].price;
-
-    for (let topping of this.toppings) {
-        const toppingInfo = Pizza.TOPPINGS[topping];
-        if (typeof toppingInfo.price !== 'undefined') {
-        price += toppingInfo.price;
-        } else {
-        price += toppingInfo[this.size].price;
+  // Выбор добавок
+  // Выбор добавок
+  DOM.addonCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Переключаем класс selected
+      card.classList.toggle('selected');
+      
+      const addonName = card.dataset.addon;
+      
+      // Обновляем массив выбранных добавок
+      if (card.classList.contains('selected')) {
+        if (!state.selectedAddons.includes(addonName)) {
+          state.selectedAddons.push(addonName);
         }
-    }
+      } else {
+        state.selectedAddons = state.selectedAddons.filter(name => name !== addonName);
+      }
+      
+      // Обновляем UI
+      updateUI();
+    });
+  });
 
-    return price;
-    }
+  // Добавление в корзину
+  DOM.addToCartBtn.addEventListener('click', () => {
+    if (!state.selectedPizza) return;
+    
+    // Создаем объект заказа
+    const orderItem = {
+      pizza: state.selectedPizza,
+      size: state.selectedSize,
+      addons: [...state.selectedAddons],
+      price: parseInt(DOM.totalPrice.textContent.match(/\d+/)[0]),
+      calories: parseInt(DOM.calories.textContent.match(/\d+/)[0]),
+      timestamp: new Date().getTime()
+    };
+    
+    // Добавляем в корзину
+    state.cartItems.push(orderItem);
+    
+    // Сбрасываем выбор (кроме размера)
+    DOM.pizzaCards.forEach(c => c.classList.remove('selected'));
+    DOM.addonCards.forEach(c => c.classList.remove('selected'));
+    
+    state.selectedPizza = null;
+    state.selectedAddons = [];
+    
+    // Обновляем UI
+    updateUI();
+    
+    // Показываем уведомление
+    alert(`Пицца "${orderItem.pizza}" добавлена в корзину!`);
+  });
+};
 
-    calculateCalories() {
-    let calories = Pizza.TYPES[this.type].calories + Pizza.SIZES[this.size].calories;
+// Инициализация приложения
+const init = () => {
+  // Устанавливаем обработчики событий
+  setupEventListeners();
+  
+  // Активируем размер по умолчанию
+  document.querySelector(`.size-option[data-size="${state.selectedSize}"]`).classList.add('active');
+  
+  // Первоначальное обновление UI
+  updateUI();
+};
 
-    for (let topping of this.toppings) {
-        const toppingInfo = Pizza.TOPPINGS[topping];
-        if (typeof toppingInfo.calories !== 'undefined') {
-        calories += toppingInfo.calories;
-        } else {
-        calories += toppingInfo[this.size].calories;
-        }
-    }
-
-    return calories;
-    }
-}
-
-// === Пример использования ===
-const myPizza = new Pizza('Баварская', 'большая');
-myPizza.addTopping('сливочная моцарелла');
-myPizza.addTopping('сырный борт');
-console.log('Пицца:', myPizza.getSize());
-console.log('Размер:', myPizza.getStuffing());
-console.log('Добавки:', myPizza.getToppings().join(', '));
-console.log('Цена:', myPizza.calculatePrice(), 'руб.');
-console.log('Калории:', myPizza.calculateCalories(), 'Ккал.');
+// Запускаем приложение
+document.addEventListener('DOMContentLoaded', init);
